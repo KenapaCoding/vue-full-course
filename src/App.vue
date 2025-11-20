@@ -1,11 +1,19 @@
-<script setup></script>
+<script setup>
+  console.log('Hi, Ranggo!')
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="container">
+    <h1>Hello, gua Ranggo</h1>
+    <p>
+      Gua sebagai tutor vue pada sesi kali ini
+    </p>   
+  </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .container{
+    padding: 20px;
+    text-align: center;
+  }
+</style>
