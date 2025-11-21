@@ -1,11 +1,15 @@
 <script setup>
-  import { ref, reactive } from 'vue';
+  import { ref, reactive, computed } from 'vue';
 
   const counter = reactive({count:0})
   function increment(number){
     counter.count = counter.count + number
   }
-  
+  const oddoreven = computed(()=>{
+    if (counter.count % 2 == 0) return "Angka count genap"
+    return "Angka count ganjil"
+  })
+ 
   const message = ref("Hi")
   message.value = "Hello"
 
@@ -15,6 +19,14 @@
   }
 
   const link = "https://vuejs.org";
+
+  function getRandomNumber(){
+    return Math.random()
+  }
+
+  const randomNumber = computed(()=>{
+    return Math.random()
+  });
 </script>
 
 <template>
@@ -25,7 +37,10 @@
     </p>   
   </div>
   <div class="container">
-    <button @click="increment(2)"> Count is : {{ counter.count }}</button>
+    <button @click="increment(1)"> Count is : {{ counter.count }}</button>
+    <p>{{ oddoreven }}</p>
+    <p>{{ getRandomNumber() }}</p>
+    <p>{{ randomNumber }}</p>
     <p>{{ message }}</p>
     <p>{{ message.split('').reverse().join('') }}</p>
     <a :href="link">Kunjungi Vue</a>
