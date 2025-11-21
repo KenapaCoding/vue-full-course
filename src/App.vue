@@ -9,6 +9,8 @@
 
   console.log('Hi, Ranggo!');
   const nama = 'Pato';
+
+  const link = "https://vuejs.org";
 </script>
 
 <template>
@@ -22,6 +24,7 @@
     <p>{{ counter.count }}</p>
     <p>{{ message }}</p>
     <p>{{ message.split('').reverse().join('') }}</p>
+    <a :href="link">Kunjungi Vue</a>
   </div>
 </template>
 
