@@ -38,6 +38,25 @@
 
   const nilai = ref(85);
 
+  const todos = ref([
+  {
+    id: 1,
+    text: "Belajar Vue.js",
+    done: false
+  },
+  {
+    id: 2,
+    text: "Mengerjakan project",
+    done: false
+  },
+  {
+    id: 3,
+    text: "Review materi",
+    done: true
+  }
+]);
+
+
 </script>
 
 <template>
@@ -63,7 +82,7 @@
     <p>{{ search }}</p>
   </div> -->
 
-  <div class="container">
+  <!-- <div class="container">
     <h1 v-if="isLoggedIn">Selamat Datang !</h1>
     <h1 v-else>Silahkan Login terlebih dahulu</h1>
     <h1 v-show="isLoggedIn">Selamat v-show</h1>
@@ -74,7 +93,13 @@
     <p v-else-if="nilai>=80">B</p>
     <p v-else-if="nilai>=70">C</p>
     <p v-else>Tidak Lulus</p>
-  </div>
+  </div> -->
+
+  <ul>
+    <li v-for="todo in todos" :key="todo.id" class="todo-item" :class="todo.done ? 'done': 'not-done'">
+      {{ todo.text }}
+    </li>
+  </ul>
 
 </template>
 
@@ -83,4 +108,25 @@
     padding: 20px;
     text-align: center;
   }
+
+  .todo-item {
+  padding: 10px 14px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 6px solid; /* garis kiri */
+}
+
+/* Jika selesai → hijau */
+.done {
+  border-left-color: #28a745;
+}
+
+/* Jika belum selesai → merah */
+.not-done {
+  border-left-color: #dc3545;
+}
+
 </style>
