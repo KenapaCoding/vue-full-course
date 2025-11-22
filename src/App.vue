@@ -27,6 +27,12 @@
   const randomNumber = computed(()=>{
     return Math.random()
   });
+
+  const search = ref("test");
+
+  // function onInput(e){
+  //   search.value = e.target.value
+  // }
 </script>
 
 <template>
@@ -45,6 +51,13 @@
     <p>{{ message.split('').reverse().join('') }}</p>
     <a :href="link">Kunjungi Vue</a>
   </div>
+
+  <div class="container">
+    <!-- <input type="text" :value="search" @input="onInput" >   -->
+    <input type="text" v-model="search">
+    <p>{{ search }}</p>
+  </div>
+
 </template>
 
 <style scoped>
