@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, reactive, computed } from 'vue';
+  import { ref, reactive, computed, watch } from 'vue';
 
   const counter = reactive({count:0})
   function increment(number){
@@ -9,6 +9,10 @@
     if (counter.count % 2 == 0) return "Angka count genap"
     return "Angka count ganjil"
   })
+
+  watch(() => counter.count, (newValue,oldValue) => {
+    console.log(`Nilai count berubah dari ${oldValue} ke ${newValue}`)
+  } )
  
   const message = ref("Hi")
   message.value = "Hello"
@@ -60,7 +64,7 @@
 </script>
 
 <template>
-  <!-- <div class="container">
+  <div class="container">
     <h1>{{ greeting('Ranggo') }}</h1>
     <p>
       Gua sebagai tutor vue pada sesi kali ini
@@ -80,7 +84,7 @@
     <input type="text" :value="search" @input="onInput" >
     <input type="text" v-model="search">
     <p>{{ search }}</p>
-  </div> -->
+  </div>
 
   <!-- <div class="container">
     <h1 v-if="isLoggedIn">Selamat Datang !</h1>
@@ -95,11 +99,11 @@
     <p v-else>Tidak Lulus</p>
   </div> -->
 
-  <ul>
+  <!-- <ul>
     <li v-for="todo in todos" :key="todo.id" class="todo-item" :class="todo.done ? 'done': 'not-done'">
       {{ todo.text }}
     </li>
-  </ul>
+  </ul> -->
 
 </template>
 
