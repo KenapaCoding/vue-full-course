@@ -64,7 +64,7 @@
 </script>
 
 <template>
-  <HelloWorld/>
+  <HelloWorld message="Hello from parent"/>
   <!-- <div class="container">
     <h1>{{ greeting('Ranggo') }}</h1>
     <p>
