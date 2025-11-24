@@ -1,70 +1,71 @@
 <script setup>
   import { ref, reactive, computed, watch } from 'vue';
+  import HelloWorld from './components/greeting/HelloWorld.vue';
+  // const counter = reactive({count:0})
+  // function increment(number){
+  //   counter.count = counter.count + number
+  // }
+  // const oddoreven = computed(()=>{
+  //   if (counter.count % 2 == 0) return "Angka count genap"
+  //   return "Angka count ganjil"
+  // })
 
-  const counter = reactive({count:0})
-  function increment(number){
-    counter.count = counter.count + number
-  }
-  const oddoreven = computed(()=>{
-    if (counter.count % 2 == 0) return "Angka count genap"
-    return "Angka count ganjil"
-  })
-
-  watch(() => counter.count, (newValue,oldValue) => {
-    console.log(`Nilai count berubah dari ${oldValue} ke ${newValue}`)
-  } )
+  // watch(() => counter.count, (newValue,oldValue) => {
+  //   console.log(`Nilai count berubah dari ${oldValue} ke ${newValue}`)
+  // } )
  
-  const message = ref("Hi")
-  message.value = "Hello"
+  // const message = ref("Hi")
+  // message.value = "Hello"
 
-  console.log('Hi, Ranggo!');
-  function greeting(nama){
-    return `Hello, gua ${nama}`
-  }
+  // console.log('Hi, Ranggo!');
+  // function greeting(nama){
+  //   return `Hello, gua ${nama}`
+  // }
 
-  const link = "https://vuejs.org";
+  // const link = "https://vuejs.org";
 
-  function getRandomNumber(){
-    return Math.random()
-  }
+  // function getRandomNumber(){
+  //   return Math.random()
+  // }
 
-  const randomNumber = computed(()=>{
-    return Math.random()
-  });
+  // const randomNumber = computed(()=>{
+  //   return Math.random()
+  // });
 
-  const search = ref("test");
+  // const search = ref("test");
 
   // function onInput(e){
   //   search.value = e.target.value
   // }
 
-  const isLoggedIn = ref(true);
+//   const isLoggedIn = ref(true);
 
-  const nilai = ref(85);
+//   const nilai = ref(85);
 
-  const todos = ref([
-  {
-    id: 1,
-    text: "Belajar Vue.js",
-    done: false
-  },
-  {
-    id: 2,
-    text: "Mengerjakan project",
-    done: false
-  },
-  {
-    id: 3,
-    text: "Review materi",
-    done: true
-  }
-]);
+//   const todos = ref([
+//   {
+//     id: 1,
+//     text: "Belajar Vue.js",
+//     done: false
+//   },
+//   {
+//     id: 2,
+//     text: "Mengerjakan project",
+//     done: false
+//   },
+//   {
+//     id: 3,
+//     text: "Review materi",
+//     done: true
+//   }
+// ]);
 
 
 </script>
 
 <template>
-  <div class="container">
+  <HelloWorld/>
+  <!-- <div class="container">
     <h1>{{ greeting('Ranggo') }}</h1>
     <p>
       Gua sebagai tutor vue pada sesi kali ini
@@ -84,7 +85,7 @@
     <input type="text" :value="search" @input="onInput" >
     <input type="text" v-model="search">
     <p>{{ search }}</p>
-  </div>
+  </div> -->
 
   <!-- <div class="container">
     <h1 v-if="isLoggedIn">Selamat Datang !</h1>
