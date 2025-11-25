@@ -72,7 +72,10 @@ import Layout from './components/layout/Layout.vue';
       <h1>Judul halaman</h1>
     </template>
 
-    <p>Ini main Konten</p>
+    <template #default="{user}">
+      <p>Ini main Konten</p>
+      <p>Halo Nama gua {{ user.name }}, gua berumur {{ user.age }}</p>
+    </template>
 
     <template #footer>
       <p>2025 All rights reserved</p>
