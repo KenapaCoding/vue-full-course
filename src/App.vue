@@ -2,6 +2,7 @@
   import { ref, reactive, computed, watch } from 'vue';
   import HelloWorld from './components/greeting/HelloWorld.vue';
   import Card from './components/slot/Card.vue';
+import Layout from './components/layout/Layout.vue';
   // const counter = reactive({count:0})
   // function increment(number){
   //   counter.count = counter.count + number
@@ -65,11 +66,25 @@
 </script>
 
 <template>
-  <HelloWorld message="Hello from parent"/>
+
+  <Layout>
+    <template #header>
+      <h1>Judul halaman</h1>
+    </template>
+
+    <p>Ini main Konten</p>
+
+    <template #footer>
+      <p>2025 All rights reserved</p>
+    </template>
+
+  </Layout>
+
+  <!-- <HelloWorld message="Hello from parent"/>
   <Card>
     <h3>Ini konten dari parent</h3>
     <p>Bebas isi apa saja</p>
-  </Card>
+  </Card> -->
   <!-- <div class="container">
     <h1>{{ greeting('Ranggo') }}</h1>
     <p>
