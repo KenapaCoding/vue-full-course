@@ -77,9 +77,9 @@ import Layout from './components/layout/Layout.vue';
       <p>Halo Nama gua {{ user.name }}, gua berumur {{ user.age }}</p>
     </template>
 
-    <template #footer>
+    <!-- <template #footer>
       <p>2025 All rights reserved</p>
-    </template>
+    </template> -->
 
   </Layout>
 

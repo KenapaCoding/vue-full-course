@@ -8,7 +8,7 @@
     </main>
 
     <footer>
-        <slot name="footer"></slot>
+        <slot name="footer">Ini Footer</slot>
     </footer>
 </template>
 
