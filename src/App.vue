@@ -3,6 +3,7 @@
   import HelloWorld from './components/greeting/HelloWorld.vue';
   import Card from './components/slot/Card.vue';
 import Layout from './components/layout/Layout.vue';
+import MyInput from './components/input/MyInput.vue';
   // const counter = reactive({count:0})
   // function increment(number){
   //   counter.count = counter.count + number
@@ -61,15 +62,23 @@ import Layout from './components/layout/Layout.vue';
 //     done: true
 //   }
 // ]);
-function callback(text){
-  console.log(`button di children di clik user , ${text}`)
-}
+// function callback(text){
+//   console.log(`button di children di clik user , ${text}`)
+// }
+  const nama = ref("ranggo")
+  const age = ref("26");
+
 
 </script>
 
 <template>
 
-  <Layout @some-event="callback">
+  <MyInput :value="nama" @change="nama = $event"/>
+  <MyInput :value="age" @change="age = $event"/>
+
+  <button @click="()=>console.log(nama,age)">Submit</button>
+
+  <!-- <Layout @some-event="callback">
     <template #header>
       <h1>Judul halaman</h1>
     </template>
@@ -77,13 +86,13 @@ function callback(text){
     <template #default="{user}">
       <p>Ini main Konten</p>
       <p>Halo Nama gua {{ user.name }}, gua berumur {{ user.age }}</p>
-    </template>
+    </template> -->
 
     <!-- <template #footer>
       <p>2025 All rights reserved</p>
     </template> -->
 
-  </Layout>
+  <!-- </Layout> -->
 
   <!-- <HelloWorld message="Hello from parent"/>
   <Card>
