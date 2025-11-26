@@ -61,13 +61,15 @@ import Layout from './components/layout/Layout.vue';
 //     done: true
 //   }
 // ]);
-
+function callback(text){
+  console.log(`button di children di clik user , ${text}`)
+}
 
 </script>
 
 <template>
 
-  <Layout>
+  <Layout @some-event="callback">
     <template #header>
       <h1>Judul halaman</h1>
     </template>
