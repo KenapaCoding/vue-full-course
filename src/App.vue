@@ -73,8 +73,8 @@ import MyInput from './components/input/MyInput.vue';
 
 <template>
 
-  <MyInput :value="nama" @change="nama = $event"/>
-  <MyInput :value="age" @change="age = $event"/>
+  <MyInput v-model="nama"/>
+  <MyInput v-model="age"/>
 
   <button @click="()=>console.log(nama,age)">Submit</button>
 
