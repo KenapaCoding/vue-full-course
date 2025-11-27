@@ -7,6 +7,7 @@ import MyInput from './components/input/MyInput.vue';
 import Home from './components/pages/Home.vue';
 import Setting from './components/pages/Setting.vue';
 import Profile from './components/pages/Profile.vue';
+import Parent from './components/turunan/Parent.vue';
   // const counter = reactive({count:0})
   // function increment(number){
   //   counter.count = counter.count + number
@@ -71,23 +72,24 @@ import Profile from './components/pages/Profile.vue';
   // const nama = ref("ranggo")
   // const age = ref("26");
 
-  const current = ref('home');
+  // const current = ref('home');
 
-  const mapComp = {
-    'home' : Home,
-    'setting' : Setting,
-    'profile' : Profile
-  };
+  // const mapComp = {
+  //   'home' : Home,
+  //   'setting' : Setting,
+  //   'profile' : Profile
+  // };
 
 
 </script>
 
 <template>
-  <button @click="current = 'home'">Home</button>
+  <Parent/>
+  <!-- <button @click="current = 'home'">Home</button>
   <button @click="current = 'setting'">Setting</button>
   <button @click="current = 'profile'">Profile</button>
 
-  <Component :is="mapComp[current]" />
+  <Component :is="mapComp[current]" /> -->
 
   <!-- <MyInput v-model="nama"/>
   <MyInput v-model="age"/>
