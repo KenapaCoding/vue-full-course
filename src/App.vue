@@ -89,7 +89,9 @@ import Parent from './components/turunan/Parent.vue';
   <button @click="current = 'setting'">Setting</button>
   <button @click="current = 'profile'">Profile</button>
 
-  <Component :is="mapComp[current]" />
+  
+    <component :is="mapComp[current]" />
+  
 
   <!-- <MyInput v-model="nama"/>
   <MyInput v-model="age"/>
