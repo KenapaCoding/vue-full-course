@@ -85,7 +85,15 @@ import Parent from './components/turunan/Parent.vue';
 
 <template>
   <nav>
-    home
+    <div>
+      <router-link to="/">Home</router-link>
+    </div>
+    <div>
+      <router-link to="/setting">Setting</router-link>
+    </div>
+    <div>
+      <router-link to="/profile">Profile</router-link>
+    </div>
   </nav>
   <router-view/>
   
