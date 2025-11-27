@@ -4,6 +4,9 @@
   import Card from './components/slot/Card.vue';
 import Layout from './components/layout/Layout.vue';
 import MyInput from './components/input/MyInput.vue';
+import Home from './components/pages/Home.vue';
+import Setting from './components/pages/Setting.vue';
+import Profile from './components/pages/Profile.vue';
   // const counter = reactive({count:0})
   // function increment(number){
   //   counter.count = counter.count + number
@@ -65,18 +68,31 @@ import MyInput from './components/input/MyInput.vue';
 // function callback(text){
 //   console.log(`button di children di clik user , ${text}`)
 // }
-  const nama = ref("ranggo")
-  const age = ref("26");
+  // const nama = ref("ranggo")
+  // const age = ref("26");
+
+  const current = ref('home');
+
+  const mapComp = {
+    'home' : Home,
+    'setting' : Setting,
+    'profile' : Profile
+  };
 
 
 </script>
 
 <template>
+  <button @click="current = 'home'">Home</button>
+  <button @click="current = 'setting'">Setting</button>
+  <button @click="current = 'profile'">Profile</button>
 
-  <MyInput v-model="nama"/>
+  <Component :is="mapComp[current]" />
+
+  <!-- <MyInput v-model="nama"/>
   <MyInput v-model="age"/>
 
-  <button @click="()=>console.log(nama,age)">Submit</button>
+  <button @click="()=>console.log(nama,age)">Submit</button> -->
 
   <!-- <Layout @some-event="callback">
     <template #header>
