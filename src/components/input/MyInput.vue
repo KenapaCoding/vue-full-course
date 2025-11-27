@@ -1,15 +1,7 @@
 <script setup>
-    const props = defineProps({
-        modelValue : String
-    });
-
-    const emit = defineEmits(["update:modelValue"])
-
-    function handleInput(e){
-        emit("update:modelValue", e.target.value)
-    }
+  const value = defineModel();
 </script>
 
 <template>
-    <input type="text" :value="props.modelValue" @input="handleInput">
+    <input type="text" v-model="value">
 </template>
