@@ -2,7 +2,7 @@
     <div>
         Home pages
         <div>
-            <p>{{ count }}</p> 
+            <p ref="box">{{ count }}</p> 
             <button @click="increment">increase</button>
             <button @click="decrement">decrease</button>
         </div>
@@ -13,7 +13,7 @@
 import { onMounted, onUnmounted, onBeforeMount,onBeforeUnmount, onActivated,onDeactivated, ref, onUpdated, onBeforeUpdate } from 'vue';
 import { useCounter } from '@/composables/useCounter';
 
-const {count, increment, decrement} = useCounter(5,3)
+const {box, count, increment, decrement} = useCounter(5,3)
 
 onBeforeMount(()=>{
     console.log("on Before Mount")
