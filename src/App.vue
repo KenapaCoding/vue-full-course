@@ -89,6 +89,9 @@ import Parent from './components/turunan/Parent.vue';
       <router-link to="/">Home</router-link>
     </div>
     <div>
+      <router-link active-class="aktif" exact-active-class="aktif-banget" to="/dashboard">Dashboard</router-link>
+    </div>
+    <div>
       <router-link to="/setting">Setting</router-link>
     </div>
     <div>
@@ -177,6 +180,29 @@ import Parent from './components/turunan/Parent.vue';
 </template>
 
 <style scoped>
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .router-link-active{
+    color:blue;
+  }
+
+  .aktif{
+    color:yellow
+  }
+
+  .aktif-banget{
+    color:orange
+  }
+
+
+  .router-link-exact-active{
+    color:red;
+  }
+
   .container{
     padding: 20px;
     text-align: center;
